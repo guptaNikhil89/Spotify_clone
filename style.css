@@ -16,7 +16,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 2rem;
 }
 .nav {
   background-color: black;
@@ -79,14 +78,16 @@ body {
 
 .search_box:hover {
   background-color: #2a2a2a;
-  border: 1px solid rgba(255, 255, 255, .3);
+  box-shadow: 0 0 0  rgba(255, 255, 255, .3);
+}
+.search_box:hover #magnifying-glass, .search_box:focus-within #magnifying-glass{
+  color: white;
 }
 .search_box:hover input,.search_box:focus-within input {
   background-color: #2a2a2a;
 }
-.search_box input:focus-within i{
-    color: rgba(255, 255, 255, 1);
-
+.search_box i:hover{
+  color: white;
 }
 .search_box:focus-within {
   box-shadow: 0 0 0 2px white;
@@ -102,32 +103,42 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
+  
 }
 .install_app button  {
   background-color: black;
   color: #fff;
+  opacity: 0.8;
+  font-weight: bold;
   width: 8rem;
   border-radius: 2rem;
   cursor: pointer;
   height: 2rem;
   border: none;
+  transition: all 0.2s linear;
 }
 
 .explore_btn button{
   background-color: white;
   width: 8rem;
-  opacity: 0.8;
+  opacity: 0.5;
   color: #000;
+  font-weight: bold;
   border: none;
   border-radius: 2rem;
   cursor: pointer;
   height: 2rem;
-  
+  transition: all 0.2s linear;
 }
-.nav-other button:hover {
- 
+.explore_btn button:hover {
+ box-shadow: 0 0 0 2px white;
+ font-size: 14px;
   opacity: 1;
-  font-weight: bold;
+}
+
+.install_app button:hover{
+  font-size: 14px;
+  opacity: 1;
 }
 .nav-other .info{
     display: flex;
@@ -154,12 +165,17 @@ body {
     font-size: 1.5rem;
     opacity: 0.8;
 }
+
+.main{
+  height: ;
+}
 .sidebar {
   background-color: #121212;
   width: 22%;
   height: 100vh;
   border-radius: 1rem;
-  /* overflow: auto; */
+  overflow: auto;
+  /* position: fixed; */
 }
 .main-content {
   background-color: #121212;
@@ -171,16 +187,17 @@ body {
 .sidebar2 {
   background-color: #121212;
   width: 18%;
-  height: 100vh;
+  
   border-radius: 1rem;
+  overflow: auto;
 }
 .music-player {
   background-color: #000;
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 60px;
-  display: sticky;
+  height: 4rem;
+  display: fixed;
 }
 .nav img {
   height: 1.8rem;
